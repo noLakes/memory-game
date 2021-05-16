@@ -1,17 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Card(props) {
   const [clicked, setClicked] = useState(false)
 
-  const resetPicked = () => {
-    if (clicked) {
-      setClicked(false)
+  useEffect(() => {
+    const resetPicked = () => {
+      if (clicked) {
+        setClicked(false)
+      }
     }
-  }
 
-  if (props.reset) {
-    resetPicked()
-  }
+    if (props.reset) {
+      resetPicked()
+    }
+  },[props.reset, clicked])
 
   const updateCard = (e) => {
     clicked ? props.handleClick(true) : props.handleClick(false)
