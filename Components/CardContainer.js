@@ -1,57 +1,9 @@
 import React, { useState } from 'react'
 import Card from './Card.js'
+import { randAnimal, animalList } from '/Users/shan/code/js_projects/memory-game/src/Animals/animals.js'
 
 function CardContainer(props) {
-  const [cards, setCards] = useState([
-    {
-      id: 1,
-      text: 'Greg'
-    },
-    {
-      id: 2,
-      text: 'Fimmion'
-    },
-    {
-      id: 3,
-      text: 'Maureene'
-    },
-    {
-      id: 4,
-      text: 'Sandrop'
-    },
-    {
-      id: 5,
-      text: 'Michigan'
-    },
-    {
-      id: 6,
-      text: 'Jackson'
-    },
-    {
-      id: 7,
-      text: 'Meeple'
-    },
-    {
-      id: 8,
-      text: 'Soompie'
-    },
-    {
-      id: 9,
-      text: 'Jeffe'
-    },
-    {
-      id: 10,
-      text: 'Bramble'
-    },
-    {
-      id: 11,
-      text: 'Roombie'
-    },
-    {
-      id: 12,
-      text: 'Limble'
-    },
-  ])
+  const [cards, setCards] = useState(animalList(12))
 
   const [reset, setReset] = useState(false)
 
@@ -79,7 +31,7 @@ function CardContainer(props) {
   return (
     <div className='cards-container'>
       {cards.map(card => {
-      return <Card key={card.id} reset={reset} id={card.id} text={card.text} handleClick={handleClick}/>
+      return <Card key={card.index} reset={reset} id={card.index} text={card.name} handleClick={handleClick}/>
     })}
     </div>
   )
