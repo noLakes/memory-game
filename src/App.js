@@ -8,10 +8,12 @@ function App() {
   const [highScore, setHighScore] = useState(0)
 
   const addScore = () => {
+    console.log("adding score.")
     setScore(score + 1)
   }
 
   const gameOver = () => {
+    console.log('game over')
     setScore(0)
   }
 
@@ -22,7 +24,7 @@ function App() {
   },[score, highScore])
 
   return (
-    <div className="App">
+    <div className="main-container">
       <Header score={score} highScore={highScore}/>
       <CardContainer addScore={addScore} gameOver={gameOver}/>
       <Footer/>
