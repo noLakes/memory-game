@@ -53,6 +53,8 @@ function CardContainer(props) {
     },
   ])
 
+  const [reset, setReset] = useState(false)
+
   const shuffle = (array) => {
     const result = []
     while (array.length > 0) {
@@ -61,21 +63,24 @@ function CardContainer(props) {
     return result
   }
 
-  const handleClick = (gameOver, addScore) => {
-    
-  }
-
-  const cardList = () => {
-    return shuffle(cards.map(card => {
-      <Card id={card.id} text={card.text} handleClick={handleClick}/>
-    }))
+  const handleClick = (clickStatus) => {
+    setReset(false)
+    const newCardList = shuffle(cards)
+    if (clickStatus) {
+      setCards(newCardList)
+      setReset(true)
+      props.gameOver()
+    } else {
+      props.addScore()
+      setCards(newCardList)
+    }
   }
 
   return (
     <div className='cards-container'>
-      <ul className='card-list'>
-        {cardList()}
-      </ul>
+      {cards.map(card => {
+      return <Card key={card.id} reset={reset} id={card.id} text={card.text} handleClick={handleClick}/>
+    })}
     </div>
   )
 }
