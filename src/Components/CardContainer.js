@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Card from './Card.js'
 import { animalList } from '/Users/shan/code/js_projects/memory-game/src/Animals/animals.js'
 
@@ -14,6 +14,10 @@ function CardContainer(props) {
     }
     return result
   }
+
+  useEffect(() => {
+    setCards(animalList(props.cardCount))
+  }, [props.cardCount])
 
   const handleClick = (clickStatus) => {
     setReset(false)
