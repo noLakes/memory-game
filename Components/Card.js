@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 function Card(props) {
   const [clicked, setClicked] = useState(false)
-  const [loading, setLoading] = useState(true)
-
+  
   useEffect(() => {
     const resetPicked = () => {
       if (clicked) {
