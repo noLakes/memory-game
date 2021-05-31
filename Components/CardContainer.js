@@ -33,7 +33,7 @@ function CardContainer(props) {
   }
 
   return (
-    <div className='cards-container'>
+    <div className={`cards-container count-${props.cardCount}`}>
       {cards.map(card => {
       return <Card key={card.index} reset={reset} id={card.index} image={card.image} text={card.name} handleClick={handleClick}/>
     })}
