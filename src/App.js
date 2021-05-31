@@ -28,6 +28,10 @@ function App() {
     }
   },[score, highScore])
 
+  useEffect(() => {
+    setScore(0)
+  }, [cardCount])
+
   return (
     <div className="main-container">
       <Header score={score} highScore={highScore} cardCount={cardCount} handleCardCount={handleCardCount}/>

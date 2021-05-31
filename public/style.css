@@ -1,3 +1,16 @@
+body {
+  margin: 0;
+  background-color: rgb(222, 224, 235);
+}
+
+@font-face {
+  font-family: ubuntu;
+  src: url(public/fonts/Ubuntu-Regular.ttf);
+}
+
+* {
+  font-family: ubuntu, Helvetica, Arial;
+}
 
 #root {
   display: flex;
@@ -10,29 +23,92 @@
 .main-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 100%;
-  max-width: 900px;
-  border: 1px solid red;
-  padding: 1rem;
+  max-width: 980px;
+  min-height: 100vh;
+  padding: 0.5rem 1rem 0 1rem;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.score-container {
+
+}
+
+h3 {
+  margin: 0.5rem 0;
 }
 
 .cards-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 168.75px 168.75px 168.75px;
+  grid-auto-rows: 168.75px;
   width: 100%;
-  gap: 5px 5px;
+  height: 100%;
+  gap: 4px 4px;
+}
+
+.count-20 {
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 147px;
+}
+
+.count-24 {
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 147px;
+}
+
+.count-28 {
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 147px;
+}
+
+.count-32 {
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: 147px;
 }
 
 .card {
-  display: block;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-end;
   background-position: center;
   background-size: cover;
   width: 100%;
-  height: auto;
+  height: 100%;
+  border-radius: 5px;
 }
 
 .card:hover {
   background-color: aliceblue;
   cursor: pointer;
+}
+
+.animal-info {
+  display: none;
+  color: aliceblue;
+  width: 100%;
+  height: min-content;
+  padding: 0.5rem 0;
+  background-color: rgba(0, 0, 0, 0.468);
+}
+
+.animal-info.active {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  color: cornflowerblue;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: rgb(152, 95, 205);
 }

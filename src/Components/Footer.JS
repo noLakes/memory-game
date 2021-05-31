@@ -1,7 +1,7 @@
 
 function Footer() {
   return (
-    <h5>I am footer!</h5>
+    <h5>made for fun by <a href='https://github.com/noLakes'>zerolake</a></h5>
   )
 }
 
