@@ -4,12 +4,12 @@ body {
 }
 
 @font-face {
-  font-family: ubuntu;
-  src: url(public/fonts/Ubuntu-Regular.ttf);
+  font-family: Ubuntu;
+  src: url(./fonts/Ubuntu-Regular.ttf);
 }
 
 * {
-  font-family: ubuntu, Helvetica, Arial;
+  font-family: Ubuntu, Helvetica, Arial;
 }
 
 #root {
